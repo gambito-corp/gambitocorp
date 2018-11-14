@@ -325,8 +325,8 @@
 
    /* Contact Form
     * ------------------------------------------------------ */
-    var clContactForm = function() {
-        
+        var clContactForm = function() {
+  
         /* local validation */
         $('#contactForm').validate({
         
@@ -338,7 +338,7 @@
                 $.ajax({
     
                     type: "POST",
-                    url: "inc/sendEmail.php",
+                    url: "php/contacto.php",
                     data: $(form).serialize(),
                     beforeSend: function() { 
     
@@ -360,15 +360,15 @@
                             $('.message-warning').html(msg);
                             $('.message-warning').slideDown("slow");
                         }
-    
+
                     },
                     error: function() {
     
                         sLoader.slideUp("slow"); 
-                        $('.message-warning').html("Something went wrong. Please try again.");
+                        $('.message-warning').html("Algo salio mal Porfavor reintente.");
                         $('.message-warning').slideDown("slow");
     
-                    }
+                    } 
     
                 });
             }
